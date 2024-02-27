@@ -1,4 +1,4 @@
-const ip = "";
+var ip = "";
 
 fetch("https://api.ipify.org/")
     .then(response => response.text())
@@ -9,4 +9,4 @@ fetch("https://api.ipify.org/")
         console.error('Hiba történt:', error);
     });
 
-document.write(ip);
+console.log(ip);
