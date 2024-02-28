@@ -9,9 +9,12 @@ fetch("https://api.ipify.org/")
         fetch("http://ip-api.com/json/" + ip)
             .then(response => response.json())
             .then(json => {
-                country = json.country;
+                country = json.countryCode;
+                console.log(country);
+                if (country != "HU") {
+                    window.location = "https://foldesandras.github.io/refused/nhu.html"
+                }
             });
-        console.log(country);
     })
     .catch(error => {
         console.error('Hiba történt:', error);
