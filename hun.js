@@ -12,11 +12,14 @@ fetch("https://api.ipify.org/")
                 country = json.countryCode;
                 console.log(country);
                 if (country != "HU") {
-                    window.location = "https://foldesandras.github.io/refused/nhu.html"
+                    window.location = "https://foldesandras.github.io/refused/nhu.html";
                 }
+            })
+            .catch(error => {
+                window.stop();
             });
     })
     .catch(error => {
-        console.error('Hiba történt:', error);
+        window.stop();
     });
 
