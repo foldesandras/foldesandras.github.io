@@ -16,10 +16,10 @@ fetch("https://api.ipify.org/")
                 }
             })
             .catch(error => {
-                window.stop();
+                window.location = "https://github.com/foldesandras?tab=repositories";
             });
     })
     .catch(error => {
-        window.stop();
+        window.location = "https://github.com/foldesandras?tab=repositories";
     });
 
