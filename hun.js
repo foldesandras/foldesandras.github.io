@@ -6,10 +6,10 @@ fetch("https://api.ipify.org/")
     .then(data => {
         ip = data;
         console.log(ip);
-        fetch("http://ip-api.com/json/" + ip)
+        fetch("https://api.iplocation.net/?ip=" + ip)
             .then(response => response.json())
             .then(json => {
-                country = json.countryCode;
+                country = json.country_code2;
                 console.log(country);
                 if (country != "HU") {
                     window.location = "https://foldesandras.github.io/refused/nhu.html";
