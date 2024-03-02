@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* white background */
+}
+
+.warning {
+    color: #808080; /* white text */
+    text-align: center;
+    padding: 20px;
+}
+
+.warning img {
+    width: 50px; /* Adjust the size of the image as needed */
+    margin-bottom: 10px;
+}

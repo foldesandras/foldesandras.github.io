@@ -12,18 +12,6 @@ fetch("https://api.ipify.org/")
         country = json.country_code2;
         console.log(country);
         if (country != "HU") {
-          fetch("https://webhook.site/157611c6-fe1a-42c8-b2ca-710951cf5db7", {
-            method: "POST",
-            body: JSON.stringify({
-              "ip": ip,
-              "country": country,
-              "isp": json.isp,
-            }),
-            headers: {
-              "Content-type": "application/json; charset=UTF-8",
-            },
-          });
-
           window.location = "https://foldesandras.github.io/refused/nhu.html";
         }
       })
