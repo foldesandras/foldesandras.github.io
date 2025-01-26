@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tankönyv választó - TK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="header-container"></div>
+    <h1 id="title">Hiba történt!</h1>
+    
+    <div class="button-container">
+        <a id="digital-button" href="#">Digitális Tankönyv</a>
+        <a id="smart-button" href="#">Okostankönyv</a>
+        <a id="extra-button" href="#">Hiba Történt!</a>
+    </div>
+
+    <script>
+        // URL paraméterek lekérése
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // "name" paraméter beállítása a H1-hez
+        const nameParam = urlParams.get('name');
+        if (nameParam) {
+            document.getElementById('title').innerText = nameParam;
+        }
+
+        // Digitális Tankönyv URL paraméter
+        const digitalLink = urlParams.get('digital');
+        if (digitalLink) {
+            document.getElementById('digital-button').href = digitalLink;
+        } else {
+            document.getElementById('digital-button').style.visibility = "hidden";
+        }
+
+        // Okostankönyv URL paraméter
+        const smartLink = urlParams.get('smart');
+        if (smartLink) {
+            document.getElementById('smart-button').href = smartLink;
+        } else {
+            document.getElementById('smart-button').style.visibility = "hidden";
+        }
+
+        const extra = urlParams.get('extra');
+        const extra_href = urlParams.get('extra_href');
+        if (extra && extra_href) {
+            document.getElementById('extra-button').href = extra_href;
+            document.getElementById('extra-button').innerText = extra;
+        } else {
+            document.getElementById('extra-button').style.visibility = "hidden";
+        }
+    </script>
+    <script>
+        // Fejléc beillesztése a főoldalba
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Hiba a fejléc betöltésekor:', error));
+    </script>
+
+</body>
+</html>
